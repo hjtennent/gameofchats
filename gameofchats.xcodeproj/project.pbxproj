@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		351CEEB61E955A9F006A1F02 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351CEEB51E955A9F006A1F02 /* LoginController.swift */; };
 		3585E1FD1E9513BF0031B223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585E1FC1E9513BF0031B223 /* AppDelegate.swift */; };
 		3585E1FF1E9513BF0031B223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585E1FE1E9513BF0031B223 /* ViewController.swift */; };
 		3585E2021E9513BF0031B223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3585E2001E9513BF0031B223 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		351CEEB51E955A9F006A1F02 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3585E1F91E9513BF0031B223 /* gameofchats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gameofchats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3585E1FC1E9513BF0031B223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3585E1FE1E9513BF0031B223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		351CEEB21E9558D5006A1F02 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				351CEEB51E955A9F006A1F02 /* LoginController.swift */,
+				3585E1FE1E9513BF0031B223 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		3585E1F01E9513BD0031B223 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +108,8 @@
 		3585E1FB1E9513BF0031B223 /* gameofchats */ = {
 			isa = PBXGroup;
 			children = (
+				351CEEB21E9558D5006A1F02 /* Controller */,
 				3585E1FC1E9513BF0031B223 /* AppDelegate.swift */,
-				3585E1FE1E9513BF0031B223 /* ViewController.swift */,
 				3585E2001E9513BF0031B223 /* Main.storyboard */,
 				3585E2031E9513C00031B223 /* Assets.xcassets */,
 				3585E2051E9513C00031B223 /* LaunchScreen.storyboard */,
@@ -261,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3585E1FF1E9513BF0031B223 /* ViewController.swift in Sources */,
+				351CEEB61E955A9F006A1F02 /* LoginController.swift in Sources */,
 				3585E1FD1E9513BF0031B223 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
