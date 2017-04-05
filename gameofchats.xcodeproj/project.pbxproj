@@ -510,6 +510,7 @@
 				3585E2231E9513C30031B223 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3585E2241E9513C30031B223 /* Build configuration list for PBXNativeTarget "gameofchatsTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +519,7 @@
 				3585E2261E9513C30031B223 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3585E2271E9513C30031B223 /* Build configuration list for PBXNativeTarget "gameofchatsUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +528,7 @@
 				3585E2291E9513C30031B223 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
