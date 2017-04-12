@@ -36,9 +36,9 @@ class NewMessageController: UITableViewController {
                 self.users.append(user)
                 
                 //this will crash because of background thread, so lets use dispatch_async to fix
-                DispatchQueue.main.async(execute: {
+                DispatchQueue.main.async {
                     self.tableView.reloadData()
-                })
+                }
                 
                 //Safer method:
                 //user.name = dictionary["name"] as? String
@@ -68,21 +68,7 @@ class NewMessageController: UITableViewController {
         if let profileImageUrl = user.profileImageUrl {
             
             cell.profileImageView.loadImageUsingCacheWithURLString(urlString: profileImageUrl)
-           // let url = NSURL(string: profileImageUrl)
-            //URLSession.shared.dataTask(with: url! as URL, completionHandler: { (data, response, error) in
-            //
-                //download hit an error so lets return out
-              //  if error != nil {
-             //       print(error!)
-               //     return
-                //}
-                
-        //        let backgroundQueue = DispatchQueue(label: "hjt.gameofchats", qos: .background, target: nil)
-          //      backgroundQueue.async {
-            //        cell.profileImageView.image = UIImage(data: data!)
-              //  }
-                
-           // }).resume()
+
         }
         
         return cell
