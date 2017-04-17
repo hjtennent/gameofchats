@@ -11,6 +11,8 @@ import Firebase
 
 class MessagesController: UITableViewController {
 
+    let cellId = "cellId"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,11 +24,14 @@ class MessagesController: UITableViewController {
         
         checkIfUserIsLoggedIn()
         
+        tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
+        
         observeMessages()
         
     }
     
     var messages = [Message]()
+    var messagesDictionary = [String: Message]()
     
     func observeMessages() {
         let ref = FIRDatabase.database().reference().child("messages")
@@ -35,7 +40,21 @@ class MessagesController: UITableViewController {
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let message = Message()
                 message.setValuesForKeys(dictionary)
-                self.messages.append(message)
+                //self.messages.append(message)
+                
+                if let toId = message.toId {
+                   self.messagesDictionary[toId] = message
+                    
+                    self.messages = Array(self.messagesDictionary.values)
+                    self.messages.sort(by: { (message1, message2) -> Bool in
+                        
+                        return (message1.timestamp?.intValue)! > (message2.timestamp?.intValue)!
+                        
+                    })
+                }
+                
+                
+                
                 //this will crash because of background thread, so lets call this on dispatch_async main thread
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -50,14 +69,19 @@ class MessagesController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserCell
         
         let message = messages[indexPath.row]
-        cell.textLabel?.text = message.toId
-        cell.detailTextLabel?.text = message.text
+        
+        cell.message = message
         
         return cell
         
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 72
     }
     
     func handleNewMessage() {
