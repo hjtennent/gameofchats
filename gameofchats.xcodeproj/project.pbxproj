@@ -670,6 +670,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 184D93147470157970245B9E /* Pods-gameofchats.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TB92Z93P7Z;
 				INFOPLIST_FILE = gameofchats/Info.plist;
@@ -684,6 +685,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 370A5D208E5A96D6CA53F71F /* Pods-gameofchats.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TB92Z93P7Z;
 				INFOPLIST_FILE = gameofchats/Info.plist;
