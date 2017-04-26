@@ -17,12 +17,7 @@ class Message: NSObject {
     var toId: String?
     
     func chatPartnerId() -> String? {
-        
-        if fromId == FIRAuth.auth()?.currentUser?.uid {
-            return toId
-        } else {
-            return fromId
-        }
+        return fromId == FIRAuth.auth()?.currentUser?.uid ? toId : fromId
     }
     
 }

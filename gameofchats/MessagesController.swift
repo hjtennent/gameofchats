@@ -44,7 +44,7 @@ class MessagesController: UITableViewController {
             let messagesReference = FIRDatabase.database().reference().child("messages").child(messageId)
             
             messagesReference.observeSingleEvent(of: .value, with: { (snapshot) in
-                print(snapshot)
+                // print(snapshot)
                 
                 if let dictionary = snapshot.value as? [String: AnyObject] {
                     let message = Message()
